@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import {DataTableModule} from "angular2-datatable";
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppComponent } from './app.component';
 
@@ -25,9 +26,13 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    DataTableModule
+    DataTableModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAQa4JeO-nBNdi4icFnvBKbyPT46qEAIoQ'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

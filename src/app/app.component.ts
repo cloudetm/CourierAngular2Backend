@@ -7,21 +7,29 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   items: FirebaseListObservable<any[]>;
   af: AngularFire;
+  mapTitle: string = 'Couriers on Map';
+  // google maps zoom level
+  zoom: number = 10;
+  // initial center position for the map
+  lat: number = 32.1618472;
+  lng: number = 34.8072596;
+
   constructor(af: AngularFire) {
     this.af = af;
     this.items = af.database.list('/');
   }
-  turn(event) {
-    if (event.on) {
-      this.af.database.object('/' + event.$key + '/on').set(false);
+  turn(courier) {
+    if (courier.on) {
+      this.af.database.object('/' + courier.$key + '/on').set(false);
     } else {
-      this.af.database.object('/' + event.$key + '/on').set(true);
+      this.af.database.object('/' + courier.$key + '/on').set(true);
     }
   }
   showStatus(status): String {
-    if(status)
+    if(status)       
       return "ON";
     else
       return "OFF";
@@ -45,5 +53,10 @@ export class AppComponent {
       default:
         return "Activity unreachable";
     }
+  }
+  focus(courier) {
+    this.lat = courier.lat;
+    this.lng = courier.lng;
+    this.zoom = 16;
   }
 }
