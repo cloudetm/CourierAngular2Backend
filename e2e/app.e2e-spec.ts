@@ -1,4 +1,4 @@
-import { CourierAngular2BackendPage } from './app.po';
+import {CourierAngular2BackendPage} from "./app.po";
 
 describe('courier-angular2-backend App', function() {
   let page: CourierAngular2BackendPage;

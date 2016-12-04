@@ -1,12 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {AngularFireModule} from "angularfire2";
 import {DataTableModule} from "angular2-datatable";
-import { AgmCoreModule } from 'angular2-google-maps/core';
-
-import { AppComponent } from './app.component';
+import {AgmCoreModule} from "angular2-google-maps/core";
+import {AppComponent} from "./app.component";
 
 // Must export the config
 export const firebaseConfig = {

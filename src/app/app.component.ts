@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import {Component} from "@angular/core";
+import {AngularFire, FirebaseListObservable} from "angularfire2";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+
   items: FirebaseListObservable<any[]>;
   af: AngularFire;
   mapTitle: string = 'Couriers on Map';
@@ -28,13 +28,15 @@ export class AppComponent {
       this.af.database.object('/' + courier.$key + '/on').set(true);
     }
   }
-  showStatus(status): String {
-    if(status)       
+
+  static showStatus(status): String {
+    if (status)
       return "ON";
     else
       return "OFF";
   }
-  showActivity(state): String {
+
+  static showActivity(state): String {
     switch (state) {
       case 0:
         return "Now driving";
