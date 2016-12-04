@@ -29,14 +29,14 @@ export class AppComponent {
     }
   }
 
-  static showStatus(status): String {
+  showStatus(status): String {
     if (status)
       return "ON";
     else
       return "OFF";
   }
 
-  static showActivity(state): String {
+  showActivity(state): String {
     switch (state) {
       case 0:
         return "Now driving";
